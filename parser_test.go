@@ -444,8 +444,8 @@ const exampleStateFile = `
 							"tags.#": "0"
 						}
 					}
-				}
-				"telmate_proxmox.nineteen": {
+				},
+				"telmate_proxmox.twenty": {
 					"type": "telmate_proxmox",
 					"primary": {
 						"id": "proxmox/qemu/100",
@@ -479,6 +479,7 @@ const expectedListOutput = `
 			"10.2.1.5",
 			"10.20.30.40",
 			"192.168.0.3",
+			"192.168.1.123",
 			"192.168.102.14",
 			"50.0.0.1",
 			"50.0.0.17",
@@ -512,7 +513,7 @@ const expectedListOutput = `
 	"sixteen": ["10.0.0.16"],
 	"seventeen": ["50.0.0.17"],
 	"eighteen": ["80.80.100.124"],
-	"nineteen": ["192.168.1.123"],
+	"twenty": ["192.168.1.123"],
 
 	"one_0":   ["10.0.0.1"],
 	"dup_0":   ["10.0.0.1"],
@@ -534,7 +535,7 @@ const expectedListOutput = `
 	"sixteen_0": ["10.0.0.16"],
 	"seventeen_0": ["50.0.0.17"],
 	"eighteen_0": ["80.80.100.124"],
-	"nineteen_0": ["192.168.1.123"],
+	"twenty_0": ["192.168.1.123"],
 
 	"type_aws_instance":                  ["10.0.0.1", "10.0.1.1", "50.0.0.1"],
 	"type_digitalocean_droplet":          ["192.168.0.3"],
@@ -585,11 +586,11 @@ const expectedInventoryOutput = `[all]
 10.2.1.5
 10.20.30.40
 192.168.0.3
+192.168.1.123
 192.168.102.14
 50.0.0.1
 50.0.0.17
 80.80.100.124
-192.168.1.123
 10.20.30.50
 
 [all:vars]
@@ -617,12 +618,6 @@ olddatacenter="\u003c0.7_format"
 80.80.100.124
 
 [eighteen_0]
-80.80.100.124
-
-[nineteen]
-80.80.100.124
-
-[nineteen_0]
 80.80.100.124
 
 [eleven]
@@ -755,6 +750,12 @@ olddatacenter="\u003c0.7_format"
 [twelve_0]
 10.20.30.50
 
+[twenty]
+192.168.1.123
+
+[twenty_0]
+192.168.1.123
+
 [two]
 50.0.0.1
 
@@ -787,9 +788,6 @@ olddatacenter="\u003c0.7_format"
 [type_linode_instance]
 80.80.100.124
 
-[type_telmate_proxmox]
-191.168.1.123
-
 [type_openstack_compute_instance_v2]
 10.120.0.226
 
@@ -807,6 +805,9 @@ olddatacenter="\u003c0.7_format"
 
 [type_softlayer_virtual_guest]
 10.0.0.7
+
+[type_telmate_proxmox]
+192.168.1.123
 
 [type_triton_machine]
 10.0.0.10
